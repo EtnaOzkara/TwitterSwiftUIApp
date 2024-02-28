@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct FeedView: View {
+    @ObservedObject var viewModel = FeedViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            LazyVStack{
+                ForEach(viewModel.messages){ message in
+                    PostCardView(message: message)
+                        .padding()
+                }
+            }
+    
+        }
     }
 }
-
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-    }
-}
+//
+//struct FeedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedView()
+//    }
+//}

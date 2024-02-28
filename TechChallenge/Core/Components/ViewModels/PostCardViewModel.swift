@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class PostCardViewModel: ObservableObject {
+    private let service = MessageService()
+    let message: Message
+    
+    init (message: Message){
+        self.message = message
+    }
+    func likeMessage(){
+        service.likeMessage()
+    }
+    
+}

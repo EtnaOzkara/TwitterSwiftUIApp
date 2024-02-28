@@ -15,6 +15,5 @@ struct Message : Identifiable, Decodable{
     let uid: String
     var likes: Int
     
-    
     var user: User?
 }

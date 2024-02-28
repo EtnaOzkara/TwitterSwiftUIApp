@@ -7,20 +7,32 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Group{
+            if viewModel.userSession==nil{
+                LoginView()
+            }else{
+//        NavigationView{
+            ZStack(alignment: .topLeading){
+                MainTabView()
+            }.navigationTitle("SocialSphere").font(.title)
+            .navigationBarTitleDisplayMode(.inline)
+//        }
+
+            }
         }
-        .padding()
+
     }
+    
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+////            .environmentObject(authViewModel)
+//    }
+//}

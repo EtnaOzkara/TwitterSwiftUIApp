@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class UploadMessageViewModel: ObservableObject{
+    let service=MessageService()
+    func uploadMessage(withCaption caption: String){
+        service.uploadMessage(caption: caption)
+        
+    }
+}

@@ -3,6 +3,7 @@ import Firebase // Assuming you have Firebase imported for Timestamp
 
 struct PostCardView: View {
     let message: Message
+
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()

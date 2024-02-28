@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
+
 struct TechChallengeApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+
+    init() {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+//                LoginView()
+                ContentView()
+            }.environmentObject(authViewModel)
         }
     }
 }
+
+
+
+
